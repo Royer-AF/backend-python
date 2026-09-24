@@ -1,0 +1,17 @@
+[
+    {
+        "id": "001",
+        "nombre": "Python Pro",
+        "precio": 150
+    },
+    {
+        "id": "002",
+        "nombre": "JavaScript",
+        "precio": 120
+    },
+    {
+        "id": "003",
+        "nombre": "Cobol",
+        "precio": 100
+    }
+]
