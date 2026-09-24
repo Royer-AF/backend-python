@@ -1,17 +1,16 @@
 from fastapi import FastAPI
 
-# Inicializamos la aplicación
 app = FastAPI()
 
-# Definimos una ruta (Endpoint) tipo GET
 @app.get("/")
 def inicio():
-    return {"mensaje": "¡Bienvenido a mi primera API Web con Python!"}
+    return {"mensaje": "¡Servidor FastAPI corriendo exitosamente en Linux Mint!"}
 
-@app.get("/curso")
-def obtener_curso():
+@app.get("/producto")
+def obtener_producto():
     return {
-        "curso": "Python Backend",
-        "nivel": "Intermedio",
-        "estado": "Activo"
+        "nombre": "Curso Python Pro",
+        "precio": 49.90,
+        "link_descarga": "https://upc.edu.pe/curso",
+        "disponible": True
     }
