@@ -20,3 +20,18 @@ class ProductoRel(SQLModel, table=True):
     
     # Relación principal: Un producto pertenece a UNA categoría
     categoria: Optional[Categoria] = Relationship(back_populates="productos")
+
+# --- TABLA DE USUARIOS ---
+class UsuarioBase(SQLModel):
+    username: str = Field(index=True, unique=True)
+
+class Usuario(UsuarioBase, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    password_hashed: str # Aquí guardamos la contraseña encriptada
+
+class UsuarioCrear(UsuarioBase):
+    password: str # La contraseña plana que envía el usuario al registrarse
+
+class Token(SQLModel):
+    access_token: str
+    token_type: str
